@@ -56,14 +56,15 @@ int main() {
 
             else {
                 for (int i = 1; i <= n; ++i) {
-                    factorial *= i; 
+                    factorial *= i;
                 }
-            
-
-                cout << n << "=" << factorial; //change to show the math
-            }
-
-
+                {
+                    if (n!= factorial)
+                        cout << n << "*"; //number with * 
+                    else
+                        cout << n << "=" << factorial << endl; //change to show the math
+                }
+            } 
 
         }
 
@@ -74,7 +75,7 @@ int main() {
 
             std::cout << "Arithmetic Series:";
 
-            cout << "Enter a number to start at: "; 
+            cout << "\nEnter a number to start at: "; 
             cin >> n1; //read first number
 
             cout << "Enter a number to add each time: "; 
@@ -82,6 +83,11 @@ int main() {
 
             cout << "Enter the number of elements in the series: "; 
             cin >> n2; //read the number of elements
+
+            if (n2 < 1)
+                cout << "Nice try, enter a POSITIVE number:"; // FIGURE OUT HOW TO LOOP
+
+
 
             //calculate
             s1 = (n2 * (2 * n1 + (n2 - 1) * df)) / 2; 
