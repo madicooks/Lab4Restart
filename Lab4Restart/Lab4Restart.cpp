@@ -46,7 +46,9 @@ int main() {
             int n; 
             long factorial = 1.0; 
 
-            cout << "Enter a number: "; 
+            std::cout << "Factorial:";
+
+            cout << "\nEnter a number: "; 
             cin >> n; 
 
             if (n < 0)
@@ -56,8 +58,9 @@ int main() {
                 for (int i = 1; i <= n; ++i) {
                     factorial *= i; 
                 }
+            
 
-                cout << "Factorial of" << n << "=" << factorial; //change to show the math
+                cout << n << "=" << factorial; //change to show the math
             }
 
 
@@ -66,10 +69,74 @@ int main() {
 
         else if (choice == 2) {
             arithmetic();
+            int n1, df, n2, i, ln; 
+            int s1 = 0; 
+
+            std::cout << "Arithmetic Series:";
+
+            cout << "Enter a number to start at: "; 
+            cin >> n1; //read first number
+
+            cout << "Enter a number to add each time: "; 
+            cin >> df; // read the difference
+
+            cout << "Enter the number of elements in the series: "; 
+            cin >> n2; //read the number of elements
+
+            //calculate
+            s1 = (n2 * (2 * n1 + (n2 - 1) * df)) / 2; 
+
+            //calculate last number
+            ln = n1 + (n2 - 1) * df; 
+
+            //show each term
+            for (i = n1; i <= ln; i = i + df)
+            {
+                if (i != ln)
+                    cout << i << "+"; //display the terms with '+' 
+                else
+                    cout << i << "=" << s1 << endl; // display last term with '=' and the answer
+            }
+
+
         }
 
         else if (choice == 3) {
             geometric();
+
+            float g1, cr, i, n, j; 
+            int ntrm, gpn; 
+            float sum = 0; 
+
+            std::cout << "Geometric Series:"; 
+
+            cout << "\nEnter a number to start at:"; 
+            cin >> g1; //read starting number
+
+            cout << "Enter a number to multiply by each time:"; 
+            cin >> cr; //read number to multiply by each time
+
+            cout << "Enter the number of elements in the series:";
+            cin >> ntrm; //read number of elements in the series
+
+            if (ntrm < 1)
+                cout << "Nice try, please enter a POSITIVE number: "; //FIGURE OUT HOW TO LOOP
+
+
+            if (ntrm > 1) 
+            //give the numbers in the series
+             cout << g1 << "+"; //show starting number
+             sum = g1; // set sum to the starting number 
+
+            //show the series of numbers
+             for (j = 1; j < ntrm; j++) {
+                 gpn = g1 * pow(cr, j); //calculate each term 
+                 sum = sum + gpn; //add
+                 cout << gpn << "+";
+             }
+
+             if (ntrm > 1) 
+            cout << "=" << sum << endl; // show answer
         }
 
         cout << "\nGo Again? [Y/N]";
