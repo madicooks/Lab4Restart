@@ -62,7 +62,7 @@ int main() {
                     if (n!= factorial)
                         cout << n << "*"; //number with * 
                     else
-                        cout << n << "=" << factorial << endl; //change to show the math
+                        cout << n << "=" << factorial << endl; //CHANGE TO SHOW THE MATH
                 }
             } 
 
@@ -108,7 +108,7 @@ int main() {
         }
 
         else if (choice == 3) {
-            geometric();
+            geometric(); // ANSWER ISNT CORRECT (adding random number at the end)
 
             float g1, cr, i, n, j; 
             int ntrm, gpn; 
